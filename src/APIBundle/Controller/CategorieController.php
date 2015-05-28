@@ -2,40 +2,26 @@
 
 namespace APIBundle\Controller;
 
-use APIBundle\Entity\UserRepository;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use APIBundle\Entity\User;
-use APIBundle\Form\UserType;
+use APIBundle\Entity\Categorie;
+use APIBundle\Form\CategorieType;
 
 /**
- * User controller.
+ * Categorie controller.
  *
- * @Route("/user")
+ * @Route("/categorie")
  */
-class UserController extends Controller
+class CategorieController extends Controller
 {
 
     /**
-     * @Route("/api_user/{id}", name="api_user", defaults={"id" = null}, requirements={"id" =  "\d+"})
-     */
-    public function userAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-        /** @var UserRepository $repo */
-        $repo = $em->getRepository('APIBundle:User');
-        $article = $repo->findCatchThemAll($id);
-        return new JsonResponse($article);
-    }
-
-    /**
-     * Lists all User entities.
+     * Lists all Categorie entities.
      *
-     * @Route("/", name="user")
+     * @Route("/", name="categorie")
      * @Method("GET")
      * @Template()
      */
@@ -43,22 +29,22 @@ class UserController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('APIBundle:User')->findAll();
+        $entities = $em->getRepository('APIBundle:Categorie')->findAll();
 
         return array(
             'entities' => $entities,
         );
     }
     /**
-     * Creates a new User entity.
+     * Creates a new Categorie entity.
      *
-     * @Route("/", name="user_create")
+     * @Route("/", name="categorie_create")
      * @Method("POST")
-     * @Template("APIBundle:User:new.html.twig")
+     * @Template("APIBundle:Categorie:new.html.twig")
      */
     public function createAction(Request $request)
     {
-        $entity = new User();
+        $entity = new Categorie();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -67,7 +53,7 @@ class UserController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('user_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('categorie_show', array('id' => $entity->getId())));
         }
 
         return array(
@@ -77,16 +63,16 @@ class UserController extends Controller
     }
 
     /**
-     * Creates a form to create a User entity.
+     * Creates a form to create a Categorie entity.
      *
-     * @param User $entity The entity
+     * @param Categorie $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(User $entity)
+    private function createCreateForm(Categorie $entity)
     {
-        $form = $this->createForm(new UserType(), $entity, array(
-            'action' => $this->generateUrl('user_create'),
+        $form = $this->createForm(new CategorieType(), $entity, array(
+            'action' => $this->generateUrl('categorie_create'),
             'method' => 'POST',
         ));
 
@@ -96,15 +82,15 @@ class UserController extends Controller
     }
 
     /**
-     * Displays a form to create a new User entity.
+     * Displays a form to create a new Categorie entity.
      *
-     * @Route("/new", name="user_new")
+     * @Route("/new", name="categorie_new")
      * @Method("GET")
      * @Template()
      */
     public function newAction()
     {
-        $entity = new User();
+        $entity = new Categorie();
         $form   = $this->createCreateForm($entity);
 
         return array(
@@ -114,9 +100,9 @@ class UserController extends Controller
     }
 
     /**
-     * Finds and displays a User entity.
+     * Finds and displays a Categorie entity.
      *
-     * @Route("/{id}", name="user_show")
+     * @Route("/{id}", name="categorie_show")
      * @Method("GET")
      * @Template()
      */
@@ -124,10 +110,10 @@ class UserController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('APIBundle:User')->find($id);
+        $entity = $em->getRepository('APIBundle:Categorie')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find User entity.');
+            throw $this->createNotFoundException('Unable to find Categorie entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -139,9 +125,9 @@ class UserController extends Controller
     }
 
     /**
-     * Displays a form to edit an existing User entity.
+     * Displays a form to edit an existing Categorie entity.
      *
-     * @Route("/{id}/edit", name="user_edit")
+     * @Route("/{id}/edit", name="categorie_edit")
      * @Method("GET")
      * @Template()
      */
@@ -149,10 +135,10 @@ class UserController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('APIBundle:User')->find($id);
+        $entity = $em->getRepository('APIBundle:Categorie')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find User entity.');
+            throw $this->createNotFoundException('Unable to find Categorie entity.');
         }
 
         $editForm = $this->createEditForm($entity);
@@ -166,16 +152,16 @@ class UserController extends Controller
     }
 
     /**
-    * Creates a form to edit a User entity.
+    * Creates a form to edit a Categorie entity.
     *
-    * @param User $entity The entity
+    * @param Categorie $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(User $entity)
+    private function createEditForm(Categorie $entity)
     {
-        $form = $this->createForm(new UserType(), $entity, array(
-            'action' => $this->generateUrl('user_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new CategorieType(), $entity, array(
+            'action' => $this->generateUrl('categorie_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -184,20 +170,20 @@ class UserController extends Controller
         return $form;
     }
     /**
-     * Edits an existing User entity.
+     * Edits an existing Categorie entity.
      *
-     * @Route("/{id}", name="user_update")
+     * @Route("/{id}", name="categorie_update")
      * @Method("PUT")
-     * @Template("APIBundle:User:edit.html.twig")
+     * @Template("APIBundle:Categorie:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('APIBundle:User')->find($id);
+        $entity = $em->getRepository('APIBundle:Categorie')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find User entity.');
+            throw $this->createNotFoundException('Unable to find Categorie entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -207,7 +193,7 @@ class UserController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('user_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('categorie_edit', array('id' => $id)));
         }
 
         return array(
@@ -217,9 +203,9 @@ class UserController extends Controller
         );
     }
     /**
-     * Deletes a User entity.
+     * Deletes a Categorie entity.
      *
-     * @Route("/{id}", name="user_delete")
+     * @Route("/{id}", name="categorie_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
@@ -229,21 +215,21 @@ class UserController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('APIBundle:User')->find($id);
+            $entity = $em->getRepository('APIBundle:Categorie')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find User entity.');
+                throw $this->createNotFoundException('Unable to find Categorie entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('user'));
+        return $this->redirect($this->generateUrl('categorie'));
     }
 
     /**
-     * Creates a form to delete a User entity by id.
+     * Creates a form to delete a Categorie entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -252,7 +238,7 @@ class UserController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('user_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('categorie_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()

@@ -21,6 +21,27 @@ class Aliments
      */
     private $id;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="name", type="string", length=70)
+     */
+    private $name;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="calorie", type="integer")
+     */
+    private $calorie;
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="Categorie")
+     *
+     */
+    private $categorie;
+
 
     /**
      * Get id
@@ -30,5 +51,74 @@ class Aliments
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Aliments
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set calorie
+     *
+     * @param integer $calorie
+     * @return Aliments
+     */
+    public function setCalorie($calorie)
+    {
+        $this->calorie = $calorie;
+
+        return $this;
+    }
+
+    /**
+     * Get calorie
+     *
+     * @return integer 
+     */
+    public function getCalorie()
+    {
+        return $this->calorie;
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param \APIBundle\Entity\Categorie $categorie
+     * @return Aliments
+     */
+    public function setCategorie(\APIBundle\Entity\Categorie $categorie = null)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return \APIBundle\Entity\Categorie 
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
     }
 }

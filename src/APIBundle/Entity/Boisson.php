@@ -21,6 +21,59 @@ class Boisson
      */
     private $id;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="name", type="string", length=70)
+     */
+    private $name;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="calorie", type="integer")
+     */
+    private $calorie;
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="Categorie")
+     *
+     */
+    private $categorie;
+
+    /**
+     * @return int
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param int $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCalorie()
+    {
+        return $this->calorie;
+    }
+
+    /**
+     * @param int $calorie
+     */
+    public function setCalorie($calorie)
+    {
+        $this->calorie = $calorie;
+    }
+
 
     /**
      * Get id
@@ -30,5 +83,28 @@ class Boisson
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param Categorie $categorie
+     * @return Boisson
+     */
+    public function setCategorie(Categorie $categorie = null)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return Categorie
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
     }
 }

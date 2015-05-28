@@ -5,12 +5,12 @@ namespace APIBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Categorie
+ * Aliments
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="APIBundle\Entity\CategorieRepository")
+ * @ORM\Entity(repositoryClass="APIBundle\Entity\AlimentsRepository")
  */
-class Categorie
+class Aliments
 {
     /**
      * @var integer
@@ -21,7 +21,6 @@ class Categorie
      */
     private $id;
 
-
     /**
      * @var integer
      *
@@ -30,20 +29,18 @@ class Categorie
     private $name;
 
     /**
-     * @return int
+     * @var integer
+     *
+     * @ORM\Column(name="calorie", type="integer")
      */
-    public function getName()
-    {
-        return $this->name;
-    }
+    private $calorie;
 
     /**
-     * @param int $name
+     *
+     * @ORM\ManyToOne(targetEntity="Categorie")
+     *
      */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
+    private $categorie;
 
 
     /**
@@ -54,10 +51,5 @@ class Categorie
     public function getId()
     {
         return $this->id;
-    }
-
-    public function toString()
-    {
-        return $this->name;
     }
 }
