@@ -23,7 +23,7 @@ class Categorie
 
 
     /**
-     * @var integer
+     * @var string
      *
      * @ORM\Column(name="name", type="string", length=70)
      */
@@ -58,6 +58,7 @@ class Categorie
 
     public function __toString()
     {
+
         return $this->name;
     }
 }
