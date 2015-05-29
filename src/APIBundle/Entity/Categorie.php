@@ -56,7 +56,7 @@ class Categorie
         return $this->id;
     }
 
-    public function toString()
+    public function __toString()
     {
         return $this->name;
     }
