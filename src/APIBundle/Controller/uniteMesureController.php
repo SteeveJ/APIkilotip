@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use APIBundle\Entity\uniteMesure;
+use APIBundle\Entity\UniteMesure;
 use APIBundle\Form\uniteMesureType;
 
 /**
@@ -29,7 +29,7 @@ class uniteMesureController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('APIBundle:uniteMesure')->findAll();
+        $entities = $em->getRepository('APIBundle:UniteMesure')->findAll();
 
         return array(
             'entities' => $entities,
@@ -44,7 +44,7 @@ class uniteMesureController extends Controller
      */
     public function createAction(Request $request)
     {
-        $entity = new uniteMesure();
+        $entity = new UniteMesure();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -69,9 +69,9 @@ class uniteMesureController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(uniteMesure $entity)
+    private function createCreateForm(UniteMesure $entity)
     {
-        $form = $this->createForm(new uniteMesureType(), $entity, array(
+        $form = $this->createForm(new UniteMesureType(), $entity, array(
             'action' => $this->generateUrl('unitemesure_create'),
             'method' => 'POST',
         ));
@@ -90,7 +90,7 @@ class uniteMesureController extends Controller
      */
     public function newAction()
     {
-        $entity = new uniteMesure();
+        $entity = new UniteMesure();
         $form   = $this->createCreateForm($entity);
 
         return array(
@@ -110,7 +110,7 @@ class uniteMesureController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('APIBundle:uniteMesure')->find($id);
+        $entity = $em->getRepository('APIBundle:UniteMesure')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find uniteMesure entity.');
@@ -135,7 +135,7 @@ class uniteMesureController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('APIBundle:uniteMesure')->find($id);
+        $entity = $em->getRepository('APIBundle:UniteMesure')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find uniteMesure entity.');
@@ -158,7 +158,7 @@ class uniteMesureController extends Controller
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(uniteMesure $entity)
+    private function createEditForm(UniteMesure $entity)
     {
         $form = $this->createForm(new uniteMesureType(), $entity, array(
             'action' => $this->generateUrl('unitemesure_update', array('id' => $entity->getId())),
@@ -180,7 +180,7 @@ class uniteMesureController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('APIBundle:uniteMesure')->find($id);
+        $entity = $em->getRepository('APIBundle:UniteMesure')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find uniteMesure entity.');
