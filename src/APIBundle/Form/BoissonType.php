@@ -18,6 +18,7 @@ class BoissonType extends AbstractType
             ->add('name')
             ->add('calorie')
             ->add('categorie')
+            ->add('quantite')
         ;
     }
     
