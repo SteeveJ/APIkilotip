@@ -35,35 +35,13 @@ class Aliments
      */
     private $calorie;
 
-    /**
-     *
-     * @ORM\ManyToOne(targetEntity="Categorie")
-     *
-     */
-    private $categorie;
 
     /**
-     * @var integer
      *
-     * @ORM\Column(name="quantite", type="integer")
+     * @ORM\ManyToOne(targetEntity="uniteMesure")
+     *
      */
-    private $quantite;
-
-    /**
-     * @return int
-     */
-    public function getQuantite()
-    {
-        return $this->quantite;
-    }
-
-    /**
-     * @param int $quantite
-     */
-    public function setQuantite($quantite)
-    {
-        $this->quantite = $quantite;
-    }
+    private $uniteMesure;
 
 
 
@@ -124,25 +102,25 @@ class Aliments
     }
 
     /**
-     * Set categorie
+     * Set uniteMesure
      *
-     * @param \APIBundle\Entity\Categorie $categorie
+     * @param \APIBundle\Entity\uniteMesure $uniteMesure
      * @return Aliments
      */
-    public function setCategorie(\APIBundle\Entity\Categorie $categorie = null)
+    public function setUniteMesure(\APIBundle\Entity\uniteMesure $uniteMesure = null)
     {
-        $this->categorie = $categorie;
+        $this->uniteMesure = $uniteMesure;
 
         return $this;
     }
 
     /**
-     * Get categorie
+     * Get uniteMesure
      *
-     * @return \APIBundle\Entity\Categorie 
+     * @return \APIBundle\Entity\uniteMesure 
      */
-    public function getCategorie()
+    public function getUniteMesure()
     {
-        return $this->categorie;
+        return $this->uniteMesure;
     }
 }

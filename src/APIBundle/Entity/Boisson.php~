@@ -29,18 +29,17 @@ class Boisson
     private $name;
 
     /**
-     *
-     * @ORM\ManyToOne(targetEntity="Categorie")
-     *
-     */
-    private $categorie;
-
-    /**
      * @var integer
      *
      * @ORM\Column(name="calorie", type="integer")
      */
     private $calorie;
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="uniteMesure")
+     *
+     */
+    private $uniteMesure;
 
     /**
      * @return int
@@ -84,4 +83,6 @@ class Boisson
     {
         return $this->id;
     }
+
+
 }
