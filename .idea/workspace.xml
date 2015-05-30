@@ -28,8 +28,8 @@
       <file leaf-file-name="Aliments.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/APIBundle/Entity/Aliments.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.346153" vertical-offset="306" max-vertical-offset="2244">
-              <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="24" />
+            <state vertical-scroll-proportion="-26.153847" vertical-offset="306" max-vertical-offset="2635">
+              <caret line="58" column="5" selection-start-line="37" selection-start-column="4" selection-end-line="58" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -48,18 +48,18 @@
       <file leaf-file-name="AlimentsType.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/APIBundle/Form/AlimentsType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="765">
-              <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+            <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="782">
+              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BoissonType.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BoissonType.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/APIBundle/Form/BoissonType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="765">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="19" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.3321839" vertical-offset="0" max-vertical-offset="870">
+              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -77,10 +77,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="uniteMesureController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="uniteMesureController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/APIBundle/Controller/uniteMesureController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.46059114" vertical-offset="3468" max-vertical-offset="4301">
+            <state vertical-scroll-proportion="4.452381" vertical-offset="3468" max-vertical-offset="4301">
               <caret line="182" column="49" selection-start-line="182" selection-start-column="49" selection-end-line="182" selection-end-column="49" />
               <folding>
                 <element signature="e#40#85#0#PHP" expanded="true" />
@@ -102,8 +102,8 @@
       <file leaf-file-name="Boisson.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/APIBundle/Entity/Boisson.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.961538" vertical-offset="1119" max-vertical-offset="1989">
-              <caret line="104" column="15" selection-start-line="104" selection-start-column="15" selection-end-line="104" selection-end-column="15" />
+            <state vertical-scroll-proportion="-32.03846" vertical-offset="255" max-vertical-offset="2380">
+              <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -142,12 +142,12 @@
         <option value="$PROJECT_DIR$/src/APIBundle/Entity/uniteMesure.php" />
         <option value="$PROJECT_DIR$/src/APIBundle/Entity/UniteMesure.php" />
         <option value="$PROJECT_DIR$/src/APIBundle/Entity/UniteMesureRepository.php" />
+        <option value="$PROJECT_DIR$/src/APIBundle/Form/uniteMesureType.php" />
+        <option value="$PROJECT_DIR$/src/APIBundle/Controller/uniteMesureController.php" />
         <option value="$PROJECT_DIR$/src/APIBundle/Entity/Aliments.php" />
         <option value="$PROJECT_DIR$/src/APIBundle/Entity/Boisson.php" />
         <option value="$PROJECT_DIR$/src/APIBundle/Form/AlimentsType.php" />
         <option value="$PROJECT_DIR$/src/APIBundle/Form/BoissonType.php" />
-        <option value="$PROJECT_DIR$/src/APIBundle/Form/uniteMesureType.php" />
-        <option value="$PROJECT_DIR$/src/APIBundle/Controller/uniteMesureController.php" />
       </list>
     </option>
   </component>
@@ -872,38 +872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/APIBundle/Entity/Boisson.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.961538" vertical-offset="1119" max-vertical-offset="1989">
-          <caret line="104" column="15" selection-start-line="104" selection-start-column="15" selection-end-line="104" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/APIBundle/Entity/Aliments.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.346153" vertical-offset="306" max-vertical-offset="2244">
-          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/APIBundle/Form/AlimentsType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="765">
-          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/APIBundle/Form/BoissonType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="765">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="19" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/APIBundle/Form/UserType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="896">
@@ -924,11 +892,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/APIBundle/Controller/uniteMesureController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.46059114" vertical-offset="3468" max-vertical-offset="4301">
+        <state vertical-scroll-proportion="4.452381" vertical-offset="3468" max-vertical-offset="4301">
           <caret line="182" column="49" selection-start-line="182" selection-start-column="49" selection-end-line="182" selection-end-column="49" />
           <folding>
             <element signature="e#40#85#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/APIBundle/Entity/Aliments.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.153847" vertical-offset="306" max-vertical-offset="2635">
+          <caret line="58" column="5" selection-start-line="37" selection-start-column="4" selection-end-line="58" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/APIBundle/Entity/Boisson.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-32.03846" vertical-offset="255" max-vertical-offset="2380">
+          <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/APIBundle/Form/AlimentsType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="782">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/APIBundle/Form/BoissonType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3321839" vertical-offset="0" max-vertical-offset="870">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
