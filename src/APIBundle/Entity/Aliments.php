@@ -42,6 +42,28 @@ class Aliments
      */
     private $categorie;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="calorie", type="integer")
+     */
+    private $nombre;
+
+    /**
+     * @return int
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * @param int $nombre
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+    }
 
     /**
      * Get id

@@ -11,6 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use APIBundle\Entity\User;
 use APIBundle\Form\UserType;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * User controller.
@@ -31,6 +32,26 @@ class UserController extends Controller
         $repo = $em->getRepository('APIBundle:User');
         $article = $repo->findCatchThemAll($id);
         return new JsonResponse($article);
+    }
+
+    /**
+     * @Route("/create/{username}/{password}/{sexe}/{poid}/{taille}/{objectif}",
+     * name="Create_user")
+     */
+    public function userCreateAction($username, $password, $sexe,$poid, $taille, $objectif)
+    {
+        header("Access-Control-Allow-Origin: *");
+        $em = $this->getDoctrine()->getManager();
+        $user = new User();
+        $user->setUsername($username)
+            ->setPassword($password)
+            ->setPoids($poid)
+            ->setTaille($taille)
+            ->setObjectif($objectif)
+            ->setSexe($sexe);
+        $em->persist($user);
+        $em->flush();
+        return new JsonResponse($user->getUsername());
     }
 
     /**
