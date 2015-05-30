@@ -36,7 +36,7 @@ class Boisson
     private $calorie;
     /**
      *
-     * @ORM\ManyToOne(targetEntity="uniteMesure")
+     * @ORM\ManyToOne(targetEntity="UniteMesure")
      *
      */
     private $uniteMesure;
@@ -89,10 +89,10 @@ class Boisson
     /**
      * Set uniteMesure
      *
-     * @param \APIBundle\Entity\uniteMesure $uniteMesure
+     * @param UniteMesure $uniteMesure
      * @return Boisson
      */
-    public function setUniteMesure(\APIBundle\Entity\uniteMesure $uniteMesure = null)
+    public function setUniteMesure(UniteMesure $uniteMesure = null)
     {
         $this->uniteMesure = $uniteMesure;
 
@@ -102,7 +102,7 @@ class Boisson
     /**
      * Get uniteMesure
      *
-     * @return \APIBundle\Entity\uniteMesure 
+     * @return UniteMesure
      */
     public function getUniteMesure()
     {

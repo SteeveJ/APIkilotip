@@ -38,7 +38,7 @@ class Aliments
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="uniteMesure")
+     * @ORM\ManyToOne(targetEntity="UniteMesure")
      *
      */
     private $uniteMesure;
@@ -104,10 +104,10 @@ class Aliments
     /**
      * Set uniteMesure
      *
-     * @param \APIBundle\Entity\uniteMesure $uniteMesure
+     * @param UniteMesure $uniteMesure
      * @return Aliments
      */
-    public function setUniteMesure(\APIBundle\Entity\uniteMesure $uniteMesure = null)
+    public function setUniteMesure(UniteMesure $uniteMesure = null)
     {
         $this->uniteMesure = $uniteMesure;
 
@@ -117,7 +117,7 @@ class Aliments
     /**
      * Get uniteMesure
      *
-     * @return \APIBundle\Entity\uniteMesure 
+     * @return UniteMesure
      */
     public function getUniteMesure()
     {
