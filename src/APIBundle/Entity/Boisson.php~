@@ -36,10 +36,33 @@ class Boisson
     private $calorie;
     /**
      *
-     * @ORM\ManyToOne(targetEntity="uniteMesure")
+     * @ORM\ManyToOne(targetEntity="UniteMesure")
      *
      */
     private $uniteMesure;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="portion", type="integer")
+     */
+    private $portion;
+
+    /**
+     * @return int
+     */
+    public function getPortion()
+    {
+        return $this->portion;
+    }
+
+    /**
+     * @param int $portion
+     */
+    public function setPortion($portion)
+    {
+        $this->portion = $portion;
+    }
 
     /**
      * @return int
@@ -85,4 +108,27 @@ class Boisson
     }
 
 
+
+    /**
+     * Set uniteMesure
+     *
+     * @param UniteMesure $uniteMesure
+     * @return Boisson
+     */
+    public function setUniteMesure(UniteMesure $uniteMesure = null)
+    {
+        $this->uniteMesure = $uniteMesure;
+
+        return $this;
+    }
+
+    /**
+     * Get uniteMesure
+     *
+     * @return UniteMesure
+     */
+    public function getUniteMesure()
+    {
+        return $this->uniteMesure;
+    }
 }

@@ -17,6 +17,7 @@ class AlimentsType extends AbstractType
         $builder
             ->add('name')
             ->add('calorie')
+            ->add('portion')
             ->add('uniteMesure')
         ;
     }

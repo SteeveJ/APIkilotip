@@ -42,6 +42,29 @@ class Boisson
     private $uniteMesure;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="portion", type="integer")
+     */
+    private $portion;
+
+    /**
+     * @return int
+     */
+    public function getPortion()
+    {
+        return $this->portion;
+    }
+
+    /**
+     * @param int $portion
+     */
+    public function setPortion($portion)
+    {
+        $this->portion = $portion;
+    }
+
+    /**
      * @return int
      */
     public function getName()
