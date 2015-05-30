@@ -38,25 +38,26 @@ class Boisson
     /**
      * @var integer
      *
-     * @ORM\Column(name="calorie", type="integer")
+     * @ORM\Column(name="quantite", type="integer")
      */
-    private $nombre;
+    private $quantite;
 
     /**
      * @return int
      */
-    public function getNombre()
+    public function getQuantite()
     {
-        return $this->nombre;
+        return $this->quantite;
     }
 
     /**
-     * @param int $nombre
+     * @param int $quantite
      */
-    public function setNombre($nombre)
+    public function setQuantite($quantite)
     {
-        $this->nombre = $nombre;
+        $this->quantite = $quantite;
     }
+
 
     /**
      *
