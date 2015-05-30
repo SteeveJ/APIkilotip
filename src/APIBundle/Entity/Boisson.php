@@ -34,37 +34,12 @@ class Boisson
      * @ORM\Column(name="calorie", type="integer")
      */
     private $calorie;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="quantite", type="integer")
-     */
-    private $quantite;
-
-    /**
-     * @return int
-     */
-    public function getQuantite()
-    {
-        return $this->quantite;
-    }
-
-    /**
-     * @param int $quantite
-     */
-    public function setQuantite($quantite)
-    {
-        $this->quantite = $quantite;
-    }
-
-
     /**
      *
-     * @ORM\ManyToOne(targetEntity="Categorie")
+     * @ORM\ManyToOne(targetEntity="uniteMesure")
      *
      */
-    private $categorie;
+    private $uniteMesure;
 
     /**
      * @return int
@@ -109,26 +84,28 @@ class Boisson
         return $this->id;
     }
 
+
+
     /**
-     * Set categorie
+     * Set uniteMesure
      *
-     * @param Categorie $categorie
+     * @param \APIBundle\Entity\uniteMesure $uniteMesure
      * @return Boisson
      */
-    public function setCategorie(Categorie $categorie = null)
+    public function setUniteMesure(\APIBundle\Entity\uniteMesure $uniteMesure = null)
     {
-        $this->categorie = $categorie;
+        $this->uniteMesure = $uniteMesure;
 
         return $this;
     }
 
     /**
-     * Get categorie
+     * Get uniteMesure
      *
-     * @return Categorie
+     * @return \APIBundle\Entity\uniteMesure 
      */
-    public function getCategorie()
+    public function getUniteMesure()
     {
-        return $this->categorie;
+        return $this->uniteMesure;
     }
 }
