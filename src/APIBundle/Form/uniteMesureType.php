@@ -25,7 +25,7 @@ class uniteMesureType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'APIBundle\Entity\uniteMesure'
+            'data_class' => 'APIBundle\Entity\UniteMesure'
         ));
     }
 
