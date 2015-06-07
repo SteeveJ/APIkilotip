@@ -2,6 +2,8 @@
 
 namespace APIBundle\Controller;
 
+use APIBundle\Entity\AlimentsRepository;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -17,7 +19,20 @@ use APIBundle\Form\AlimentsType;
  */
 class AlimentsController extends Controller
 {
-
+    /**
+     * @Route("/api_aliment/{id}", name="api_aliments", defaults={"id" = null}, requirements={"id" =  "\d+"})
+     */
+    public function alimentsAction($id)
+    {
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+        $em = $this->getDoctrine()->getManager();
+        /** @var AlimentsRepository $repo */
+        $repo = $em->getRepository('APIBundle:User');
+        $article = $repo->findCatchThemAll($id);
+        return new JsonResponse($article);
+    }
+    
     /**
      * Lists all Aliments entities.
      *
