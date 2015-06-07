@@ -31,7 +31,7 @@ class User
     /**
      * @var boolean
      *
-     * @ORM\Column(name="sexe", type="boolean")
+     * @ORM\Column(name="sexe", type="boolean", nullable=true)
      */
     private $sexe;
 
