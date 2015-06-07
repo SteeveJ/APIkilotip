@@ -26,7 +26,8 @@ class UserController extends Controller
      */
     public function userAction($id)
     {
-	header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
         $em = $this->getDoctrine()->getManager();
         /** @var UserRepository $repo */
         $repo = $em->getRepository('APIBundle:User');
