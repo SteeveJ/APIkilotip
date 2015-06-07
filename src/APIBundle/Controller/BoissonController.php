@@ -28,7 +28,7 @@ class BoissonController extends Controller
         header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
         $em = $this->getDoctrine()->getManager();
         /** @var BoissonRepository $repo */
-        $repo = $em->getRepository('APIBundle:User');
+        $repo = $em->getRepository('APIBundle:Boisson');
         $article = $repo->findCatchThemAll($id);
         return new JsonResponse($article);
     }

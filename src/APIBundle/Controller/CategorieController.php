@@ -28,7 +28,7 @@ class CategorieController extends Controller
         header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
         $em = $this->getDoctrine()->getManager();
         /** @var CategorieRepository $repo */
-        $repo = $em->getRepository('APIBundle:User');
+        $repo = $em->getRepository('APIBundle:Categorie');
         $article = $repo->findCatchThemAll($id);
         return new JsonResponse($article);
     }

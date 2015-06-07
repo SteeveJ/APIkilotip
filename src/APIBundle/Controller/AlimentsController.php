@@ -28,7 +28,7 @@ class AlimentsController extends Controller
         header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
         $em = $this->getDoctrine()->getManager();
         /** @var AlimentsRepository $repo */
-        $repo = $em->getRepository('APIBundle:User');
+        $repo = $em->getRepository('APIBundle:Aliments');
         $article = $repo->findCatchThemAll($id);
         return new JsonResponse($article);
     }
