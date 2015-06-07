@@ -2,8 +2,9 @@
 
 namespace APIBundle\Entity;
 
+use Doctrine\ORM\AbstractQuery;
 use Doctrine\ORM\EntityRepository;
-
+use Doctrine\ORM\Query\Expr as Expr;
 /**
  * BoissonRepository
  *
@@ -12,4 +13,24 @@ use Doctrine\ORM\EntityRepository;
  */
 class BoissonRepository extends EntityRepository
 {
+    public function findCatchThemAll($id = null)
+    {
+        $qb = $this->createQueryBuilder('b');
+
+        $qb->select('b, uM')
+            ->leftJoin('b.uniteMesure','uM', Expr\Join::WITH);
+
+        if($id != null){
+            $qb->where('b.id = :id')
+                ->setParameters([
+                    ':id' => $id,
+                ])
+            ;
+        }
+
+        return null === $id
+            ? $qb->getQuery()->getArrayResult()
+            : $qb->getQuery()->getSingleResult(AbstractQuery::HYDRATE_ARRAY);
+
+    }
 }

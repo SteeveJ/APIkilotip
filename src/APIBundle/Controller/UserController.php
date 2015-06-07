@@ -37,7 +37,8 @@ class UserController extends Controller
 
     /**
      * @Route("/create/{username}/{password}/{sexe}/{poid}/{taille}/{objectif}",
-     * name="Create_user")
+     * name="Create_user",
+     * methods = { "GET", "POST" })
      */
     public function userCreateAction($username, $password, $sexe,$poid, $taille, $objectif)
     {

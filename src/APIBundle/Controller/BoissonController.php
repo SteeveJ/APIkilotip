@@ -2,6 +2,8 @@
 
 namespace APIBundle\Controller;
 
+use APIBundle\Entity\BoissonRepository;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -17,7 +19,19 @@ use APIBundle\Form\BoissonType;
  */
 class BoissonController extends Controller
 {
-
+    /**
+     * @Route("/api_boisson/{id}", name="api_boisson", defaults={"id" = null}, requirements={"id" =  "\d+"})
+     */
+    public function boissonAction($id)
+    {
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+        $em = $this->getDoctrine()->getManager();
+        /** @var BoissonRepository $repo */
+        $repo = $em->getRepository('APIBundle:User');
+        $article = $repo->findCatchThemAll($id);
+        return new JsonResponse($article);
+    }
     /**
      * Lists all Boisson entities.
      *
