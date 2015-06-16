@@ -5,12 +5,12 @@ namespace APIBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Aliments
+ * Archive
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="APIBundle\Entity\AlimentsRepository")
+ * @ORM\Entity(repositoryClass="APIBundle\Entity\ArchiveRepository")
  */
-class Aliments
+class Archive
 {
     /**
      * @var integer
@@ -22,9 +22,9 @@ class Aliments
     private $id;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="name", type="string", length=70)
+     * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
 
@@ -36,36 +36,11 @@ class Aliments
     private $calorie;
 
     /**
-     * @var integer
+     * @var \DateTime
      *
-     * @ORM\Column(name="portion", type="integer")
+     * @ORM\Column(name="created_at", type="datetime")
      */
-    private $portion;
-
-    /**
-     * @return int
-     */
-    public function getPortion()
-    {
-        return $this->portion;
-    }
-
-    /**
-     * @param int $portion
-     */
-    public function setPortion($portion)
-    {
-        $this->portion = $portion;
-    }
-
-
-    /**
-     *
-     * @ORM\ManyToOne(targetEntity="UniteMesure")
-     *
-     */
-    private $uniteMesure;
-
+    private $createdAt;
 
 
     /**
@@ -82,7 +57,7 @@ class Aliments
      * Set name
      *
      * @param string $name
-     * @return Aliments
+     * @return Archive
      */
     public function setName($name)
     {
@@ -105,7 +80,7 @@ class Aliments
      * Set calorie
      *
      * @param integer $calorie
-     * @return Aliments
+     * @return Archive
      */
     public function setCalorie($calorie)
     {
@@ -125,25 +100,25 @@ class Aliments
     }
 
     /**
-     * Set uniteMesure
+     * Set createdAt
      *
-     * @param UniteMesure $uniteMesure
-     * @return Aliments
+     * @param \DateTime $createdAt
+     * @return Archive
      */
-    public function setUniteMesure(UniteMesure $uniteMesure = null)
+    public function setCreatedAt($createdAt)
     {
-        $this->uniteMesure = $uniteMesure;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
 
     /**
-     * Get uniteMesure
+     * Get createdAt
      *
-     * @return UniteMesure
+     * @return \DateTime 
      */
-    public function getUniteMesure()
+    public function getCreatedAt()
     {
-        return $this->uniteMesure;
+        return $this->createdAt;
     }
 }

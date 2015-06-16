@@ -65,7 +65,7 @@ class User
     /**
      * @var integer
      *
-     * @ORM\Column(name="calorie", type="integer", nullable=true)
+     * @ORM\Column(name="calorie", type="integer")
      */
     private $calorie;
 
@@ -228,50 +228,4 @@ class User
 	public function __toString(){
 		return $this->username;
 	}
-
-    /**
-     * Set age
-     *
-     * @param integer $age
-     * @return User
-     */
-    public function setAge($age)
-    {
-        $this->age = $age;
-
-        return $this;
-    }
-
-    /**
-     * Get age
-     *
-     * @return integer 
-     */
-    public function getAge()
-    {
-        return $this->age;
-    }
-
-    /**
-     * Set calorie
-     *
-     * @param integer $calorie
-     * @return User
-     */
-    public function setCalorie($calorie)
-    {
-        $this->calorie = $calorie;
-
-        return $this;
-    }
-
-    /**
-     * Get calorie
-     *
-     * @return integer 
-     */
-    public function getCalorie()
-    {
-        return $this->calorie;
-    }
 }

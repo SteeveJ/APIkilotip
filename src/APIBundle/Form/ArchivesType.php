@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class BoissonType extends AbstractType
+class ArchivesType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,10 +15,10 @@ class BoissonType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('calories')
             ->add('name')
-            ->add('calorie')
-            ->add('portion')
-            ->add('uniteMesure')
+            ->add('date')
+            ->add('user')
         ;
     }
     
@@ -28,7 +28,7 @@ class BoissonType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'APIBundle\Entity\Boisson'
+            'data_class' => 'APIBundle\Entity\Archives'
         ));
     }
 
@@ -37,6 +37,6 @@ class BoissonType extends AbstractType
      */
     public function getName()
     {
-        return 'apibundle_boisson';
+        return 'apibundle_archives';
     }
 }

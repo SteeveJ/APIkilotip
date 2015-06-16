@@ -35,12 +35,14 @@ class UserController extends Controller
         return new JsonResponse($article);
     }
 
+
+
     /**
-     * @Route("/create/{username}/{password}/{sexe}/{poid}/{taille}/{objectif}",
+     * @Route("/create/{username}/{password}/{sexe}/{poid}/{taille}/{objectif}/{age}",
      * name="Create_user",
      * methods = { "GET", "POST" })
      */
-    public function userCreateAction($username, $password, $sexe,$poid, $taille, $objectif)
+    public function userCreateAction($username, $password, $sexe,$poid, $taille, $objectif, $age)
     {
         header("Access-Control-Allow-Origin: *");
         $em = $this->getDoctrine()->getManager();
@@ -50,12 +52,32 @@ class UserController extends Controller
             ->setPoids($poid)
             ->setTaille($taille)
             ->setObjectif($objectif)
-            ->setSexe($sexe);
+            ->setSexe($sexe)
+            ->setAge($age);
         $em->persist($user);
         $em->flush();
         return new JsonResponse($user->getUsername());
     }
 
+    /**
+     * @Route("/edit/{username}/{poid}/{taille}/{objectif}/{age}",
+     * name="edit_user",
+     * methods = { "GET", "POST" })
+     */
+    public function editUserAction($username, $poid, $taille, $objectif, $age)
+    {
+        header("Access-Control-Allow-Origin: *");
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository('APIBundle:User')->findOneBy(['username' => $username]);
+
+        $user->setPoids($poid)
+            ->setAge($age)
+            ->setTaille($taille)
+            ->setObjectif($objectif);
+        $em->persist($user);
+        $em->flush();
+        return new JsonResponse($user->getUsername());
+    }
     /**
      * Lists all User entities.
      *

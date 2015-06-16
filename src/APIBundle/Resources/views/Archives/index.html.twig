@@ -1,30 +1,30 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Boisson list</h1>
+    <h1>Archives list</h1>
 
     <table class="records_list">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Calorie</th>
+                <th>Calories</th>
+                <th>Date</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('boisson_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.name }}</td>
-                <td>{{ entity.calorie }}</td>
+                <td><a href="{{ path('archives_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.calories }}</td>
+                <td>{% if entity.date %}{{ entity.date|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('boisson_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('archives_show', { 'id': entity.id }) }}">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('boisson_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('archives_edit', { 'id': entity.id }) }}">edit</a>
                     </li>
                 </ul>
                 </td>
@@ -35,7 +35,7 @@
 
         <ul>
         <li>
-            <a href="{{ path('boisson_new') }}">
+            <a href="{{ path('archives_new') }}">
                 Create a new entry
             </a>
         </li>
